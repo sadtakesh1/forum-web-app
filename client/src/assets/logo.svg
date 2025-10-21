@@ -1,0 +1,38 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title>Keystation Forum Logo</title>
+  <!-- Круглая основа -->
+  <circle cx="150" cy="150" r="145" fill="#f7f7f7" stroke="#222" stroke-width="6"></circle>
+
+  <!-- Корпус клавиатуры -->
+  <rect x="55" y="100" width="190" height="65" rx="10" fill="#e8e8e8" stroke="#222" stroke-width="4"></rect>
+  <!-- Нижняя утолщённая часть корпуса -->
+  <rect x="55" y="158" width="190" height="12" rx="3" fill="#c9c9c9" stroke="#222" stroke-width="3"></rect>
+
+  <!-- Клавиши -->
+  <g fill="#fdfdfd" stroke="#555" stroke-width="1.5">
+    <!-- Верхний ряд -->
+    <rect x="68" y="110" width="16" height="12" rx="2"></rect>
+    <rect x="88" y="110" width="16" height="12" rx="2"></rect>
+    <rect x="108" y="110" width="16" height="12" rx="2"></rect>
+    <rect x="128" y="110" width="16" height="12" rx="2"></rect>
+    <rect x="148" y="110" width="16" height="12" rx="2"></rect>
+    <rect x="168" y="110" width="16" height="12" rx="2"></rect>
+    <rect x="188" y="110" width="16" height="12" rx="2"></rect>
+    <rect x="208" y="110" width="16" height="12" rx="2"></rect>
+    <!-- Средний ряд -->
+    <rect x="73" y="126" width="16" height="12" rx="2"></rect>
+    <rect x="93" y="126" width="16" height="12" rx="2"></rect>
+    <rect x="113" y="126" width="16" height="12" rx="2"></rect>
+    <rect x="133" y="126" width="16" height="12" rx="2"></rect>
+    <rect x="153" y="126" width="16" height="12" rx="2"></rect>
+    <rect x="173" y="126" width="16" height="12" rx="2"></rect>
+    <rect x="193" y="126" width="16" height="12" rx="2"></rect>
+    <!-- Пробел -->
+    <rect x="115" y="142" width="70" height="10" rx="5" fill="#333" stroke="#333"></rect>
+  </g>
+
+  <!-- Надпись -->
+  <text x="150" y="200" text-anchor="middle" font-size="22" font-family="monospace" fill="#222" letter-spacing="1">
+    keystation
+  </text>
+</svg>

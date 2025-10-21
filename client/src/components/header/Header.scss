@@ -1,0 +1,71 @@
+.header {
+  background: #1e1e1e;
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  max-width: 900px;
+  margin: 0 auto;
+
+  &__logo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    display: inline-block;
+
+    &:hover {
+      color: #6b8cff;
+    }
+
+    //курсор справа от keystation
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 1.1em;
+      background-color: #fff;
+      margin-left: 4px;
+      animation: blink 1s step-end infinite;
+      vertical-align: text-bottom;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+
+    a,
+    button {
+      padding: 0;
+      color: #eaeaea;
+      background: none;
+      border: none;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:hover {
+        color: #6b8cff;
+      }
+    }
+
+    button {
+      font-weight: 500;
+    }
+  }
+}
+
+// анимация курсора
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
