@@ -10,44 +10,37 @@ datasource db {
 model User {
   id        Int       @id @default(autoincrement())
   email     String    @unique
-  password  String
   username  String    @unique
   createdAt DateTime  @default(now())
-
-  topics    Topic[]   @relation("UserTopics")
+  password  String
   messages  Message[] @relation("UserMessages")
+  topics    Topic[]   @relation("UserTopics")
 }
 
 model Section {
   id        Int      @id @default(autoincrement())
   title     String
   createdAt DateTime @default(now())
-
   topics    Topic[]
 }
 
 model Topic {
-  id         Int      @id @default(autoincrement())
-  title      String
-  createdAt  DateTime @default(now())
-
-  authorId   Int
-  sectionId  Int
-
-  author     User     @relation("UserTopics", fields: [authorId], references: [id], onDelete: Cascade)
-  section    Section  @relation(fields: [sectionId], references: [id], onDelete: Cascade)
-
-  messages   Message[]
+  id        Int       @id @default(autoincrement())
+  title     String
+  createdAt DateTime  @default(now())
+  authorId  Int
+  sectionId Int
+  messages  Message[]
+  author    User      @relation("UserTopics", fields: [authorId], references: [id], onDelete: Cascade)
+  section   Section   @relation(fields: [sectionId], references: [id], onDelete: Cascade)
 }
 
 model Message {
   id        Int      @id @default(autoincrement())
   body      String
   createdAt DateTime @default(now())
-
   authorId  Int
   topicId   Int
-
   author    User     @relation("UserMessages", fields: [authorId], references: [id], onDelete: Cascade)
   topic     Topic    @relation(fields: [topicId], references: [id], onDelete: Cascade)
 }
