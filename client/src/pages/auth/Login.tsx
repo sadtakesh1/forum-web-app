@@ -1,4 +1,5 @@
-import axios from "axios";
+// import axios from "axios";
+import api from '../../api/axios.ts';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./AuthStyles.scss";
@@ -12,7 +13,7 @@ function Login() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/auth/login", { email, password });
+      const res = await api.post("/auth/login", { email, password });
 
       localStorage.setItem("token", res.data.token);
       navigate("/");

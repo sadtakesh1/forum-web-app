@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 // import { sections } from "../../mock/forumData";
-import axios from "axios";
+import api from "../../api/axios";
 import { useState, useEffect } from "react";
 import "./ForumStyles.scss";
 type Section = {
@@ -12,8 +12,8 @@ export default function SectionsList() {
   const [sections, setSections] = useState<Section[]>([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/sections")
+    api
+      .get("/sections")
       .then((res) => setSections(res.data))
       .catch((err) => console.error("Ошибка при загрузке разделов:", err));
   }, []);

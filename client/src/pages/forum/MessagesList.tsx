@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import axios from "axios";
+import api from "../../api/axios";
 import "./ForumStyles.scss";
 
 // тип сообщения
@@ -28,14 +28,14 @@ export default function MessagesList() {
     async function fetchData() {
       try {
         // загружаем сообщения
-        const messagesRes = await axios.get(
-          `http://localhost:5000/topics/${topicId}/messages`
+        const messagesRes = await api.get(
+          `/topics/${topicId}/messages`
         );
         setMessages(messagesRes.data);
 
         // загружаем тему
-        const topicRes = await axios.get(
-          `http://localhost:5000/topics/id/${topicId}`
+        const topicRes = await api.get(
+          `/topics/id/${topicId}`
         );
 
         if (topicRes.data?.title) {
@@ -62,8 +62,8 @@ export default function MessagesList() {
     if (!newMessage.trim()) return;
 
     try {
-      const res = await axios.post(
-        `http://localhost:5000/topics/${topicId}/messages`,
+      const res = await api.post(
+        `/topics/${topicId}/messages`,
         { body: newMessage },
         {
           headers: {

@@ -1,7 +1,7 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 // import { topics } from "../../mock/forumData";
 import { useState, useEffect } from "react";
-import axios from "axios";
+import api from "../../api/axios";
 import "./ForumStyles.scss";
 
 type Topic = {
@@ -22,14 +22,14 @@ export default function TopicsList() {
     async function fetchTopics() {
       try {
         // Получаем список тем
-        const res = await axios.get(
-          `http://localhost:5000/topics/${sectionId}`
+        const res = await api.get(
+          `/topics/${sectionId}`
         );
         setTopics(res.data.data || []);
 
         // Получаем сам раздел по ID
-        const sectionRes = await axios.get(
-          `http://localhost:5000/sections/${sectionId}`
+        const sectionRes = await api.get(
+          `/sections/${sectionId}`
         );
         setSectionTitle(sectionRes.data.title || "Без названия");
       } catch (err) {
