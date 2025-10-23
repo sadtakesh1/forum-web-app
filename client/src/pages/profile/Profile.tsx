@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../../api/axios"; 
 import { useNavigate } from "react-router-dom";
 import "./Profile.scss";
 
@@ -23,7 +23,7 @@ export default function Profile() {
       return;
     }
 
-    axios
+    api
       .get("/auth/me", {
         headers: { Authorization: `Bearer ${token}` },
       })
