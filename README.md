@@ -2,7 +2,7 @@
 **Forum Web App** — это веб-приложение форума, построенное на **React + Vite** (клиент) и **Node.js + Express + Prisma + PostgreSQL** (сервер).
 Позволяет пользователям регистрироваться, писать сообщения и общаться в разных разделах форума.
 
-👉 [Открыть сайт](https://forum-web-app.vercel.app)
+👉 [Открыть сайт](https://forum-web-app-iota.vercel.app/)
 
 ---
 
