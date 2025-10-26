@@ -22,7 +22,6 @@ export default function Header() {
       <div className="header__logo" onClick={() => navigate("/")}>
         Keystation
       </div>
-
       {isAuth && (
         <nav className="header__nav">
           <Link to="/forum">Форум</Link>
